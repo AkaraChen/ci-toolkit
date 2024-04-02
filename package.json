@@ -8,10 +8,10 @@
   "files": [
     "bin"
   ],
-  "dependencies": {
-    "ava": "^6.1.2"
-  },
   "scripts": {
     "test": "ava"
+  },
+  "devDependencies": {
+    "ava": "^6.1.2"
   }
 }
