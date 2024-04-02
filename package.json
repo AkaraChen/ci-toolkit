@@ -1,4 +1,11 @@
 {
-  "name": "ci-toolkit",
-  "packageManager": "yarn@4.1.1"
+  "name": "@akrc/ci-toolkit",
+  "version": "1.0.0",
+  "packageManager": "yarn@4.1.1",
+  "bin": {
+    "skip-in-ci": "bin/skip-in-ci.cjs"
+  },
+  "files": [
+    "bin"
+  ]
 }

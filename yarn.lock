@@ -5,8 +5,10 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"ci-toolkit@workspace:.":
+"@akrc/ci-toolkit@workspace:.":
   version: 0.0.0-use.local
-  resolution: "ci-toolkit@workspace:."
+  resolution: "@akrc/ci-toolkit@workspace:."
+  bin:
+    skip-in-ci: bin/skip-in-ci.cjs
   languageName: unknown
   linkType: soft
