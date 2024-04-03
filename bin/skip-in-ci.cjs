@@ -17,6 +17,6 @@ if (envs.some(env => process.env[env])) {
   process.exit(0)
 }
 
-const spawn = require('child_process').spawn
+const spawn = require('cross-spawn')
 const child = spawn(command, process.argv.slice(3), { stdio: 'inherit' })
 child.on('exit', process.exit)

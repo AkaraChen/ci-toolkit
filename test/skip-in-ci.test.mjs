@@ -12,7 +12,10 @@ test('throw when no args', async t => {
 
 test('skip in ci', async t => {
     return await new Promise((resolve) => {
-        exec('CI=true yarn skip-in-ci echo hello', (_err, stdout, _stderr) => {
+        const command = process.platform === 'win32' ?
+            'set CI=true && yarn skip-in-ci echo "hello"'
+            : 'CI=true yarn skip-in-ci echo "hello"'
+        exec(command, (_err, stdout, _stderr) => {
             t.is(stdout.trim().includes('Skipping'), true)
             resolve()
         })
@@ -21,8 +24,8 @@ test('skip in ci', async t => {
 
 test('run in local', async t => {
     return await new Promise((resolve) => {
-        exec('yarn skip-in-ci echo hello', (_err, stdout, _stderr) => {
-            t.is(stdout.trim(), 'hello')
+        exec('yarn skip-in-ci echo "hello"', (_err, stdout, _stderr) => {
+            t.is(stdout.trim().includes('hello'), true)
             resolve()
         })
     })
