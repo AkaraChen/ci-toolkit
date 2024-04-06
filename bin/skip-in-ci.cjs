@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const envs = [
   'CI',
   'GITHUB_ACTIONS',
